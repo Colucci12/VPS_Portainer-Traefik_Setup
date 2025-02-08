@@ -1,15 +1,15 @@
 services:
-  budibase:
-    image: budibase/budibase
+  n8n:
+    image: n8nio/n8n:latest
     networks:
       - traefik
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.budibase.rule=Host(`budibase.SEU_DOMINIO`)"
-      - "traefik.http.routers.budibase.tls.certresolver=leresolver"
-      - "traefik.http.services.budibase.loadbalancer.server.port=5678" # 5678 é a porta padrão que o n8n atende
-      - "traefik.http.routers.budibase.entrypoints=websecure"
-      - "traefik.http.routers.budibase.service=budibase"
+      - "traefik.http.routers.n8n.rule=Host(`n8n.SEU_DOMINIO`)"
+      - "traefik.http.routers.n8n.tls.certresolver=leresolver"
+      - "traefik.http.services.n8n.loadbalancer.server.port=5678" # 5678 é a porta padrão que o n8n atende
+      - "traefik.http.routers.n8n.entrypoints=websecure"
+      - "traefik.http.routers.n8n.service=n8n"
       - "traefik.docker.network=traefik"
 
 networks:

@@ -7,7 +7,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.budibase.rule=Host(`budibase.SEU_DOMINIO`)"
       - "traefik.http.routers.budibase.tls.certresolver=leresolver"
-      - "traefik.http.services.budibase.loadbalancer.server.port=80" # 80 é a porta padrão que funciona o budibase
+      - "traefik.http.services.budibase.loadbalancer.server.port=80" # 80 é a porta padrão do budibase atende
       - "traefik.http.routers.budibase.entrypoints=websecure"
       - "traefik.http.routers.budibase.service=budibase"
       - "traefik.docker.network=traefik"
